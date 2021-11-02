@@ -1,23 +1,46 @@
 {
   "name": "vue-ssr-demo",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server",
+    "start": "cross-env NODE_ENV=production node server",
+    "build:client": "webpack --config build/webpack.client.config.js",
+    "build:server": "webpack --config build/webpack.server.config.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "json-loader": "^0.5.7",
+    "koa": "^2.13.4",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "lru-cache": "^6.0.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "terser-webpack-plugin": "^5.2.4",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.9.8",
+    "vuex-router-sync": "^5.0.0",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

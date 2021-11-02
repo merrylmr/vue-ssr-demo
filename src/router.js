@@ -3,16 +3,18 @@ import Router from 'vue-router'
 import Foo from './components/Foo.vue'
 import Bar from './components/Bar.vue'
 import Baz from './components/Baz.vue'
+import Item from './components/Item.vue'
 Vue.use(Router);
 
 export function createRouter() {
     return new Router({
         mode: 'history',
         routes: [
-            { path: '/', component: Foo },
-            { path: '/foo', component: Foo },
-            { path: '/bar', component: Bar },
-            { path: '/baz', component: Baz },
+            {path: '/', component: Foo},
+            {path: '/foo', component: Foo},
+            {path: '/bar', component: Bar},
+            {path: '/baz', component: Baz},
+            {path: '/item/:id', component: Item},
         ]
     })
 }
