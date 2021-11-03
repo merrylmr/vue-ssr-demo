@@ -15,6 +15,8 @@ function createRenderer(bundle, options) {
         bundle,
         Object.assign(options, {
             template,
+            // 手动注入，原因：需要将全局变量抽离到一个js中
+            inject: false,
             cache: new LRU({
                 max: 1000,
                 maxAge: 1000 * 60 * 15
@@ -69,6 +71,9 @@ function render(ctx, next) {
     })
 }
 
+
+
+
 // 静态资源
 server.use('/', express.static(path.join(__dirname, 'dist')));
 server.get('*', (req, res) => {
@@ -86,7 +91,11 @@ server.get('*', (req, res) => {
             }
             return
         }
-        // 处理异常……
+        // 中间件
+        console.log('context', context.renderState);
+        // writeFile(context._state)
+
+        console.log('html:', html);
         res.end(html)
     })
 })

@@ -8,7 +8,6 @@ const glob = require('glob');
 
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 
-console.log('WebpackMerge', merge)
 const config = merge(base, {
     entry: {
         app: './entry-client.js'
